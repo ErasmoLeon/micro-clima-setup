@@ -1,5 +1,31 @@
 {
   "telegramToken": "765371044:AAFEKO41gu7BPi3GdVMeswbsqjAQvzS0ExA",
   "user": 677959493,
-  "cronConfigForSavingData": "* * * * *"
+  "cronConfigForSavingData": "* * * * *",
+  "rangeCommands": [
+    {
+      "variable": "temperature",
+      "ruleType": "lessThan",
+      "value": 20,
+      "onPines": [
+        6
+      ],
+      "offPines": [
+        2,
+        1
+      ]
+    },
+    {
+      "variable": "temperature",
+      "ruleType": "moreThan",
+      "value": 20,
+      "onPines": [
+        2,
+        1
+      ],
+      "offPines": [
+        6
+      ]
+    }
+  ]
 }
