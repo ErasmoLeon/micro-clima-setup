@@ -1,11 +1,10 @@
 import startTelegramBot from './telegramBot';
 import scheduleEnvironment from './scheduleEnvironment';
 
-import fetchEnvironmentData from './fetchEnvironmentData';
+console.log('starting bot!...');
 
-const monitoringEnvironmentData = data => console.log(data);
+startTelegramBot();
 
-fetchEnvironmentData(monitoringEnvironmentData)();
+console.log('starting schedule to save data!...');
 
-// startTelegramBot();
-// scheduleEnvironment();
+scheduleEnvironment();

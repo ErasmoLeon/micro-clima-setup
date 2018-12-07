@@ -1,9 +1,14 @@
 import schedule from 'node-schedule';
-import config from 'config.json';
-import saveEnvironmentData from './saveEnvironmentData';
+import config from './config.json';
+import { saveDayEnvironmentData } from './saveEnvironmentData';
+import fetchEnvironmentData from './fetchEnvironmentData';
 
 export default () => {
   schedule.scheduleJob(config.cronConfigForSavingData, () => {
-    saveEnvironmentData({ a: 1, b: 2 });
+    fetchEnvironmentData()
+      .then((data) => {
+        saveDayEnvironmentData(data);
+      })
+      .catch(error => console.log(error));
   });
 };
