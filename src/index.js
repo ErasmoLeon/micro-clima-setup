@@ -1,10 +1,12 @@
 import startTelegramBot from './telegramBot';
 import scheduleEnvironment from './scheduleEnvironment';
+import scheduleRangeActions from './scheduleRangeActions';
 
-console.log('starting bot!...');
-
+console.log('Starting bot.');
 startTelegramBot();
 
-console.log('starting schedule to save data!...');
-
+console.log('Starting schedule to save data.');
 scheduleEnvironment();
+
+console.log('Starting schedule for range actions.');
+scheduleRangeActions();
