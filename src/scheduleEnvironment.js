@@ -4,7 +4,7 @@ import { saveDayEnvironmentData } from './saveEnvironmentData';
 import fetchEnvironmentData from './fetchEnvironmentData';
 
 export default () => {
-  schedule.scheduleJob(config.cronConfigForSavingData, () => {
+  schedule.scheduleJob(config.cronForSavingData, () => {
     fetchEnvironmentData()
       .then((data) => {
         saveDayEnvironmentData(data);
