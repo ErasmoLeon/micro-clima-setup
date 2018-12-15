@@ -5586,5 +5586,14 @@
       "humidity": 95
     }
   ],
-  "actions": []
+  "actions": [
+    {
+      "time": "12/13/2018 21:30:00",
+      "message": "Runing humidifierStart for 20 seconds on undefined pin"
+    },
+    {
+      "time": "12/13/2018 21:30:00",
+      "message": "Runing humidifierStart for 20 seconds on undefined pin"
+    }
+  ]
 }

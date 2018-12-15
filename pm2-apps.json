@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "telegram-bot",
+      "script": "./src/telegramBotStart.js"
+    },
+    {
+      "name": "schedules",
+      "script": "./src/schedulesStart.js"
+    },
+    {
+      "name": "api",
+      "script": "./src/api/server.js"
+    }
+  ]
+}
