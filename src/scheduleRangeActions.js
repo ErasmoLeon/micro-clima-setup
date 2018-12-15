@@ -9,32 +9,34 @@ const lessThan = (envVar, limit) => envVar < limit;
 
 const rangeChecks = {
   greaterThan,
-  lessThan
+  lessThan,
 };
 
 const runChecks = (envrionmentData) => {
-  config.rangeCommands.forEach(({ action, environmentVar, value, type, durationSecs }) => {
+  config.rangeCommands.forEach(({
+    action, environmentVar, value, type, durationSecs,
+  }) => {
     const valueToCheck = envrionmentData[environmentVar];
     const passValidation = rangeChecks[type](valueToCheck, value);
-    if (passValidation) {                  
+    if (passValidation) {
+      const pinActionNumber = config.pinActions[action];
       const message = `Runing ${action} for ${durationSecs} seconds on ${pinActionNumber} pin`;
-      const pinActionNumber = config.pinActions[action];      
-      getDataBase().get('actions').push(makeTimeRecod({ message })).write();      
-      console.log('Saving message: ' + message);
+      getDataBase().get('actions').push(makeTimeRecod({ message })).write();
+      console.log(`Saving message: ${message}`);
       turnPinSeconds(pinActionNumber, durationSecs);
     }
   });
-}
+};
 
 export const fetchEnvironmentDataAndRunActions = () => {
   fetchEnvironmentData()
     .then(runChecks)
     .catch(error => console.log(error));
-}
+};
 
 export default () => {
   schedule.scheduleJob(
     config.cronForCheckRanges,
-    fetchEnvironmentDataAndRunActions
+    fetchEnvironmentDataAndRunActions,
   );
 };

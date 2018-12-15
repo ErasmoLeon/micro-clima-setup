@@ -5,3 +5,5 @@ export const saveDayEnvironmentData = (environmentData) => {
   console.log('Saving data', dataToSave);
   getDataBase().get('environmentData').push(dataToSave).write();
 };
+
+export default saveDayEnvironmentData;
