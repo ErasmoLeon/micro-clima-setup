@@ -1,27 +1,26 @@
 {
   "telegramToken": "765371044:AAFEKO41gu7BPi3GdVMeswbsqjAQvzS0ExA",
   "user": 677959493,
-  "cronForSavingData": "* * * * *",
+  "cronForSavingData": "0 * * ? * *",
   "cronForCheckRanges": "0 */3 * ? * *",
-  "cronForUpdates": "0 0 * ? * *",
   "pinActions": {
-    "fanStart": 16,
-    "humidifierStart": 12
+    "fanStart": 10,
+    "humidifierStart": 17
   },
   "rangeCommands": [
     {
       "environmentVar": "temperature",
       "type": "greaterThan",
-      "value": "26",
+      "value": 25,
       "action": "fanStart",
-      "durationSecs": 60
+      "durationSecs": 20
     },
     {
       "environmentVar": "humidity",
       "type": "lessThan",
-      "value": "70",
+      "value": 75,
       "action": "humidifierStart",
-      "durationSecs": 60
+      "durationSecs": 20
     }
   ]
 }

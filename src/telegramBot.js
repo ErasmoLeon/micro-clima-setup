@@ -16,8 +16,8 @@ const messageCallback = (message) => {
     return bot.sendMessage(chatId, 'Escribe un comando valido');
   }
   if (messageCommands[message.text]) {
-    messageCommands[message.text]()
-      .then(() => {
+    return messageCommands[message.text]()
+      .then((commandMessage) => {
         bot.sendMessage(chatId, commandMessage);
       })
       .catch((errorMessageCommand) => {
