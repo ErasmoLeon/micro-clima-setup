@@ -1,7 +1,7 @@
 import schedule from 'node-schedule';
-import config from './config.json';
+import config from '../config.json';
 import { saveDayEnvironmentData } from './saveEnvironmentData';
-import fetchEnvironmentData from './fetchEnvironmentData';
+import fetchEnvironmentData from '../sensors/fetchEnvironmentData';
 
 export default () => {
   schedule.scheduleJob(config.cronForSavingData, () => {

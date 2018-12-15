@@ -1,5 +1,5 @@
 
-import fetchEnvironmentData from '../fetchEnvironmentData';
+import fetchEnvironmentData from '../../sensors/fetchEnvironmentData';
 
 export default () => new Promise((resolve, reject) => {
   fetchEnvironmentData()

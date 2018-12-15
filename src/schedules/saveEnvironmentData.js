@@ -1,4 +1,4 @@
-import { getDataBase, makeTimeRecod } from './dataBase.util';
+import { getDataBase, makeTimeRecod } from '../utils/dataBase.util';
 
 export const saveDayEnvironmentData = (environmentData) => {
   const dataToSave = makeTimeRecod(environmentData);

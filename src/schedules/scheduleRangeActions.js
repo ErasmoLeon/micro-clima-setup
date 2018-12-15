@@ -1,8 +1,8 @@
 import schedule from 'node-schedule';
-import config from './config.json';
-import fetchEnvironmentData from './fetchEnvironmentData';
-import turnPinSeconds from './turnOnPin';
-import { getDataBase, makeTimeRecod } from './dataBase.util';
+import config from '../config.json';
+import fetchEnvironmentData from '../sensors/fetchEnvironmentData';
+import turnPinSeconds from '../sensors/turnOnPin';
+import { getDataBase, makeTimeRecod } from '../utils/dataBase.util';
 
 const greaterThan = (envVar, limit) => envVar > limit;
 const lessThan = (envVar, limit) => envVar < limit;
