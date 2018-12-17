@@ -20,4 +20,17 @@ router.get('/average/today', (req, res) => {
   res.json({ temperature, humidity });
 });
 
+router.get('/global/today', (req, res) => {
+  const lastRecords = getLastRecords(20).map(record => ({
+    ...record,
+    time: record.time.split(' ')[1],
+  }));
+  const temperature = lastRecords.meanBy('temperature');
+  const humidity = lastRecords.meanBy('humidity');
+  res.json({
+    average: { temperature, humidity },
+    lastRecords,
+  });
+});
+
 export default router;

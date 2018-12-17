@@ -7,8 +7,8 @@
     },
     {
       "time": "12/14/2018 00:01:00",
-      "temperature": 21,
-      "humidity": 94
+      "temperature": 23,
+      "humidity": 90
     },
     {
       "time": "12/14/2018 00:02:00",
@@ -5577,12 +5577,12 @@
     },
     {
       "time": "12/14/2018 18:54:00",
-      "temperature": 22,
-      "humidity": 95
+      "temperature": 19,
+      "humidity": 84
     },
     {
       "time": "12/14/2018 18:55:01",
-      "temperature": 22,
+      "temperature": 20,
       "humidity": 95
     }
   ],
